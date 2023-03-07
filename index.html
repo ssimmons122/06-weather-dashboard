@@ -22,16 +22,34 @@
 <aside class="col-lg-3 bg-light">
   <h5 class="mt-1">Search for a City:</h5>
   <div class="form-inline form-group">
-    <input class="form-control" type="text" id="search-value" />
+    <input class="form-control" type="text" id="search-value">
     <button class="btn btn-primary" id="search-button"> <i class="fa fa-search"></i> </button>
   </div>
-​
+
   <ul class="list-group history"></ul>
 </aside>
 
+<!--main city box-->
+<div id="content" class="container">
+  <div class="row">
 
+<!-- list of prior searched cities -->
+    <ul id="city-results" class="list-group mt-4"></ul>
+</div>
 
-  <!--js link-->
+<!--current weather, 5 day forecast-->
+<div id="content-right" class="col-md-9 pt-4">
+    
+    <div id="current-weather" class="border rounded"></div>
+   
+    <div id="five-day-forecast" class="mt-5"></div>
+
+   </div>
+  </div>
+</div> 
+  
+
+<!--js link-->
   <script src="./script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
