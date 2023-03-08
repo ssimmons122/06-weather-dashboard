@@ -2,3 +2,37 @@ h1 {
     margin-bottom: 0%; 
     background-image: linear-gradient(to bottom right, rgb(88, 150, 244), rgb(41, 21, 133));
   }
+
+  .city {
+    width:80%;
+    border: none;
+}
+
+.card-city {
+    border: none;
+}
+
+.forecast {
+    margin: 20px;
+}
+
+
+.main-container {
+    padding-bottom: 20px;
+}
+
+.row-blue {
+    color: rgb(13, 13, 221);
+}
+
+
+  
+  /* Media queries */
+@media only screen and (max-width: 992px) {
+  #search-city{
+      width:100%;
+  }
+  #search-button{
+      width:100%;
+  }
+}

@@ -14,27 +14,23 @@ $('#search-button').on("click", (event) => {
 
 var getCurrentConditions = (event) => {
         // searched city
-        let city = $('#search-city').val();
-        currentCity= $('#search-city').val();
-        // Set    queryURL to fetch from API using weather search
-        let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric" + "&APPID=" + owmAPI;
+    let city = $('#search-city').val();
+    currentCity= $('#search-city').val();
+        // Set queryURL to fetch from API using weather search
+    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric" + "&APPID=" + owmAPI;
         fetch(queryURL)
-        //.then(handleErrors)
         .then((response) => {
-            return response.json();
+          return response.json();
         })
     
     .then((response) => {
         // Save city to local storage
-        saveCity(city);
+     saveCity(city);
         $('#search-error').text("");
         // Create icon for the current weather using Open Weather Maps
-        let currentWeatherIcon="https://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
-        // Offset UTC timezone - using moment.js
-        let currentTimeUTC = response.dt;
-        let currentTimeZoneOffset = response.timezone;
-        let currentTimeZoneOffsetHours = currentTimeZoneOffset / 60 / 60;
-        let currentMoment = moment.unix(currentTimeUTC).utc().utcOffset(currentTimeZoneOffsetHours);
+    let currentWeatherIcon="https://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+
+        
         // Render cities list
         renderCities();
         // Obtain the 5day forecast for the searched city
@@ -51,14 +47,12 @@ var getCurrentConditions = (event) => {
             <li id="uvIndex">UV Index:</li>
         </ul>`;
     // Append the results to the DOM
-    $('#current-weather').html(currentWeatherHTML);
-    // Get the latitude and longitude for the UV search from Open Weather Maps API
+$('#current-weather').html(currentWeatherHTML);
+
+// Get the latitude and longitude 
     let latitude = response.coord.lat;
     let longitude = response.coord.lon;
     let uvQueryURL = "api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&APPID=" + owkAPI;
-    // API solution for Cross-origin resource sharing (CORS) error: https://cors-anywhere.herokuapp.com/
-    uvQueryURL = "https://cors-anywhere.herokuapp.com/" + uvQueryURL;
-   
     });
 }
 
