@@ -17,7 +17,7 @@ var getCurrentConditions = (event) => {
     let city = $('#search-city').val();
     currentCity= $('#search-city').val();
         // Set queryURL to fetch from API using weather search
-    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric" + "&APPID=" + owmAPI;
+    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric" + "&APPID=" + owkAPI;
         fetch(queryURL)
         .then((response) => {
           return response.json();
@@ -49,10 +49,10 @@ var getCurrentConditions = (event) => {
     // Append the results to the DOM
 $('#current-weather').html(currentWeatherHTML);
 
-// Get the latitude and longitude 
+// rev geocode
     let latitude = response.coord.lat;
     let longitude = response.coord.lon;
-    let uvQueryURL = "api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&APPID=" + owkAPI;
+    let revQueryURL = "api.openweathermap.org/geo/1.0/reverse?lat=" + latitude + "&lon=" + longitude + "&APPID=" + owkAPI;
     });
 }
 
@@ -91,12 +91,3 @@ var renderCities = () => {
             $('#city-results').prepend(cityEl);
         }
     }}
-
-//direct geocoding
-http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
-
-//latitude and longitude ^^^^
-//http://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={lon}&limit={limit}&appid={API key}
-
-// zip code
-//http://api.openweathermap.org/geo/1.0/zip?zip={zip code},{country code}&appid={API key}
