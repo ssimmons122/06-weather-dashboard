@@ -1,7 +1,7 @@
 # 5-Day Weather Dashboard
 
 ## Description
-This challenge will use feature dynamically updated HTML and CSS in order to display current and future conditions for a city, chosen by the user.  The city will be saved locally in a visble search history. Displayed conditions include temperature, wind, and humidity.
+This application features dynamically updated HTML and CSS in order to display current and future conditions for a city, chosen by the user.  The city will be saved locally in a visble search history. Displayed conditions include temperature, wind, and humidity.
 
 ## Site
 https://ssimmons122.github.io/06-weather-dashboard/ 
@@ -17,4 +17,4 @@ This application can be useful for travellers heading to new destinations and wo
 ## Acknowledgments
 OpenWeather API <br>
 FontAwesome <br>
-Google 
+ 
